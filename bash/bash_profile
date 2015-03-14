@@ -16,7 +16,8 @@ export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/share/python/virtualenvwrapper.sh
+export PROJECT_HOME=$HOME/Projects
+source /usr/local/bin/virtualenvwrapper.sh
 
 if [ "$TMUX" = "" ]; then tmux; fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

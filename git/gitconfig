@@ -1,0 +1,55 @@
+[core]
+    editor = /usr/local/bin/mate
+    excludesfile = ~/.gitignore_global
+[user]
+	name = Christopher Valles
+	email = hello@christophervalles.com
+[credential]
+    helper = osxkeychain
+[alias]
+    amend = commit --amend
+    fixup = commit --amend --no-edit
+    st = status -sb
+    r = reset HEAD
+    r1 = reset HEAD^
+    r2 = reset HEAD^^
+    rh = reset HEAD --hard
+    rh1 = reset HEAD^ --hard
+    rh2 = reset HEAD^^ --hard
+    co = checkout
+    cob = checkout -b
+    g = grep --break --heading --line-number
+
+    # edit global git config
+    ec = config --global -e
+
+    # add all changes including untracked files and then create a commit
+    # with message...
+    cm = !git add -A && git commit -m
+
+    # add all changes including untracked files and then commit with
+    # 'SAVEPOINT' message.
+    save = !git add -A && git commit -m 'SAVEPOINT'
+
+    # this is functionally identical to 'r1' but it makes more sense
+    # semantically, as it is going to be used after a 'save' or 'wip'
+    undo = reset HEAD^ --mixed
+
+    # add all tracked changes (do not untracked files) and then commit with
+    # 'WIP' message.
+    wip = !git add -u && git commit -m 'WIP'
+
+    # add changes in working dir to a WIPE SAVEPOINT commit, then wipe that
+    # commit so: A) working dir is clean and B) I can still go back to
+    # that work I wiped if needs arises (via reflog).
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
+    # show a tree with all branches
+    tree = !git log --graph --decorate --all --oneline
+
+[color]
+    ui = true
+[grep]
+    lineNumber = true
+[push]
+    default = simple

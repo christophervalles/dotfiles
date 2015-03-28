@@ -11,4 +11,4 @@ ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
 #tmux
 echo "Setting up tmux..."
-ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux
+ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf

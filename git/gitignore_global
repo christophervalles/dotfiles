@@ -36,6 +36,6 @@
 ._*
 .Spotlight-V100
 .Trashes
-Icon?
+Icon^M^M
 ehthumbs.db
 Thumbs.db

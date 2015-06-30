@@ -1,5 +1,5 @@
 [core]
-    editor = /usr/local/bin/mate
+    editor = /usr/bin/vim
     excludesfile = ~/.gitignore_global
 [user]
 	name = Christopher Valles

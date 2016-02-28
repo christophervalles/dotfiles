@@ -21,7 +21,10 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 export PS1='\@ \w$ '
 
-# if [ "$TMUX" = "" ]; then tmux; fi
+alias encrypt="openssl des3 -in $1 -out $2"
+alias decrypt="openssl des3 -d -in $1 -out $2"
+alias ll="ls -lah"
+alias git=hub
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 

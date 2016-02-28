@@ -46,6 +46,8 @@
 
     # show a tree with all branches
     tree = !git log --graph --decorate --all --oneline
+	s = status -s
+	lg = log --oneline --decorate --all --graph
 
 [color]
     ui = true
@@ -53,3 +55,7 @@
     lineNumber = true
 [push]
     default = simple
+[pull]
+	rebase = true
+[rerere]
+	enabled = true

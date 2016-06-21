@@ -19,7 +19,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 source /usr/local/bin/virtualenvwrapper.sh
 
-export PS1='\@ \w$ '
+export PS1='\w$ '
 
 alias encrypt="openssl des3 -in $1 -out $2"
 alias decrypt="openssl des3 -d -in $1 -out $2"
@@ -33,3 +33,5 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 source ~/.profile
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

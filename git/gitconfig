@@ -4,6 +4,7 @@
 [user]
 	name = Christopher Valles
 	email = hello@christophervalles.com
+	signingkey = 30E2243E
 [credential]
     helper = osxkeychain
 [alias]

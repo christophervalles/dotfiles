@@ -3,7 +3,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
+	source ~/.bash_aliases
 fi
 
 export LC_ALL=en_US.UTF-8

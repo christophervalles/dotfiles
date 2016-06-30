@@ -75,6 +75,14 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+export CLICOLOR=1
+export GREP_OPTIONS='--color=auto'
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Projects
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
+source /usr/local/bin/virtualenvwrapper.sh
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -83,3 +91,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias run_servers='/Users/christopher/Projects/run.sh'
+alias encrypt="openssl des3 -in $1 -out $2"
+alias decrypt="openssl des3 -d -in $1 -out $2"
+alias ll="ls -lah"
+alias git=hub
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+. `brew --prefix`/etc/bash_completion
+fi

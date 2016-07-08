@@ -1,14 +1,14 @@
 #!/bin/sh
 
-#bash
-echo "Setting up bash..."
-ln -s ~/.dotfiles/bash/bash_profile ~/.bash_profile
+#zsh
+echo "Setting up zsh..."
+ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 
 # git
 echo "Setting up git..."
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
-#tmux
-echo "Setting up tmux..."
-ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+#slate
+echo "Setting up slate..."
+ln -s ~/.dotfiles/slate/slate ~/.slate

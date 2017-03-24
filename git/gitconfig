@@ -4,9 +4,9 @@
 [user]
 	name = Christopher Valles
 	email = hello@christophervalles.com
-	signingkey = 30E2243E
+	signingkey = B5CCEC7C
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 [alias]
     amend = commit --amend
     fixup = commit --amend --no-edit

@@ -92,6 +92,12 @@ alias encrypt="openssl des3 -in $1 -out $2"
 alias decrypt="openssl des3 -d -in $1 -out $2"
 alias ll="ls -lah"
 
+# SSH Agent config
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s`
+  ssh-add
+fi
+
 unsetopt inc_append_history
 unsetopt share_history
 setopt histignoredups

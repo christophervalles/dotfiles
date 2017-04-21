@@ -1,2 +1,2 @@
-xrandr --dpi 125 &
+xrandr --dpi 150 &
 exec i3

@@ -218,12 +218,6 @@ bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 # Hot corners config
 #exec --no-startup-id xdotool behave_screen_edge --delay 1000 bottom-right exec i3exit lock 
 
-# Autolaunch
-exec idea.sh
-exec spotify
-exec whatsie
-exec slack
-
 # Assign workspaces to outputs
 workspace $tag1 output DP-3-2
 workspace $tag2 output DP-3-2

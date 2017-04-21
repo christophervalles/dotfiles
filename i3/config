@@ -183,7 +183,7 @@ set $mode_launcher Launch [c]hrome, [s]potify, [i]dea
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
-    bindsym c exec google-chrome, mode "default"
+    bindsym c exec google-chrome-stable, mode "default"
     bindsym s exec spotify, mode "default"
     bindsym i exec idea, mode "default"
 

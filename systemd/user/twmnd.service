@@ -1,0 +1,10 @@
+[Unit]
+Description=Twmnd Service
+After=graphical.target
+
+[Service]
+ExecStart=/usr/bin/twmnd
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=initrc.target

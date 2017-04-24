@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 lock() {
-    i3lock -c 000000 -e
+    i3lock -k --datestr="%a %Y-%m-%d" -c 000000 -B 5 --textcolor=ffffffff --insidecolor=aaaaaa6c --ringcolor=0000003e --linecolor=00000000 --keyhlcolor=ffffff80 --ringvercolor=00ff0055 --separatorcolor=22222260 --insidevercolor=aaaaaa6c --ringwrongcolor=ff000055 --insidewrongcolor=aaaaaa6c
 }
 
 case "$1" in

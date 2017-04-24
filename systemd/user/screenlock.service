@@ -7,7 +7,7 @@ User=chris
 Type=forking
 Environment=DISPLAY=:0
 ExecStartPre=
-ExecStart=/usr/bin/i3lock -c 000000 -e -u
+ExecStart=/usr/bin/i3lock -c 000000 -e
 
 [Install]
 WantedBy=sleep.target

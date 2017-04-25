@@ -136,7 +136,7 @@ bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
+bindsym $mod+m mode "move"
 mode "move" {
 	bindsym Left move workspace to output left, mode "default"
 	bindsym Right move workspace to output right, mode "default"
@@ -144,9 +144,9 @@ mode "move" {
 	bindsym Return mode "default"
 	bindsym Escape mode "default"	
 }
-bindsym $mod+m mode "move"
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -170,10 +170,9 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
-
 # power management mode
 set $mode_system System [l] lock, [e] logout, [s] suspend, [h] hibernate, [r] reboot, [Shift+s] shutdown
+bindsym $mod+Escape mode "$mode_system"
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -186,14 +185,10 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Escape mode "$mode_system"
 
 # launcher mode
-# Pess $mod+o followed by either f, t, Esc or Return to launch firefox,
-# thunderbird or return to the default mode, respectively.
 set $mode_launcher Launch [c]hrome, [s]potify, [i]dea
 bindsym $mod+o mode "$mode_launcher"
-
 mode "$mode_launcher" {
     bindsym c exec google-chrome-stable, mode "default"
     bindsym s exec spotify, mode "default"
@@ -203,10 +198,21 @@ mode "$mode_launcher" {
     bindsym Return mode "default"
 }
 
+set $mode_spotify Spotify [←] Previous, [→] Next, [↑] Play/Pause
+bindsym $mod+F5 mode "$mode_spotify"
+mode "$mode_spotify" {
+    bindsym Left exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+    bindsym Up exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause 
+    bindsym Right exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"    
+}
+
 # Manual management of external displays
 bindsym XF86Display exec --no-startup-id xrandr-toggle
 
-# Pulse Audio controls
+# Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound

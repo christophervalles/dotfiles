@@ -1,4 +1,8 @@
 [global_config]
+  inactive_color_offset = 0.7
+  title_font = Anonymous Pro 10
+  title_hide_sizetext = True
+  title_use_system_font = False
 [keybindings]
 [layouts]
   [[default]]
@@ -13,5 +17,8 @@
   [[default]]
     copy_on_selection = True
     cursor_color = "#aaaaaa"
-    font = Anonymous Pro 15
+    font = Anonymous Pro 10
+    scrollback_infinite = True
+    show_titlebar = False
     use_system_font = False
+    visible_bell = True

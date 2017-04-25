@@ -1,0 +1,9 @@
+[Unit]
+Description=Blueberry Tray
+After=graphical.target
+
+[Service]
+ExecStart=/usr/bin/blueberry-tray
+
+[Install]
+WantedBy=initrc.target

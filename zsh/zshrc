@@ -78,7 +78,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -101,3 +101,8 @@ unsetopt inc_append_history
 unsetopt share_history
 setopt histignoredups
 setopt histignorespace
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  startx
+fi
+

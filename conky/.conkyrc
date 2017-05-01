@@ -37,9 +37,9 @@ TEXT
 # JSON for i3bar
 
 [
-	${if_up enx6c0b84b575bc}
+	${if_up enp0s20f0u3u1i5}
         {
-                "full_text": "D: ${addr enx6c0b84b575bc}",
+                "full_text": "D: ${addr enp0s20f0u3u1i5}",
                 "color": "\#00ff00"
         },
         ${else}

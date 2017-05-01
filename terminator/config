@@ -1,5 +1,4 @@
 [global_config]
-  borderless = True
   hide_from_taskbar = True
   inactive_color_offset = 0.7
   title_font = Anonymous Pro 10

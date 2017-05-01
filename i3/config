@@ -213,7 +213,7 @@ mode "$mode_spotify" {
 set $mode_display Screens [1] DVI-I-1-1 ON, [2] DVI-I-2-2 ON, [3] DVI-I-1-1 OFF, [4] DVI-I-2-2 OFF
 bindsym $mod+XF86Display mode "$mode_display" 
 mode "$mode_display" {
-    bindsym 1 exec --no-startup-id xrandr --output DVI-I-1-1 --auto --right-of eDP1, mode "default"
+    bindsym 1 exec --no-startup-id xrandr --output DVI-I-1-1 --auto --above eDP1, mode "default"
     bindsym 2 exec --no-startup-id xrandr --output DVI-I-2-2 --auto --right-of DVI-I-1-1, mode "default"
     bindsym 3 exec --no-startup-id xrandr --output DVI-I-1-1 --auto --off, mode "default"
     bindsym 4 exec --no-startup-id xrandr --output DVI-I-2-2 --auto --off, mode "default"

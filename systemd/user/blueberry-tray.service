@@ -1,6 +1,6 @@
 [Unit]
 Description=Blueberry Tray
-After=graphical.target
+After=graphical.target power-on-bluetooth.service
 
 [Service]
 ExecStart=/usr/bin/blueberry-tray

@@ -1,0 +1,9 @@
+[Unit]
+Description=Bluetooth power on
+After=graphical.target
+
+[Service]
+ExecStart=/usr/local/bin/power-on-bluetooth
+
+[Install]
+WantedBy=initrc.target

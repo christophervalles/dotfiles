@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+echo -e 'power on\nquit\n' | bluetoothctl

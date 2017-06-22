@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo -e 'power on' | bluetoothctl
+sleep 1
+echo -e 'quit' | bluetoothctl

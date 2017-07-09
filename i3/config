@@ -140,6 +140,8 @@ bindsym $mod+m mode "move"
 mode "move" {
 	bindsym Left move workspace to output left, mode "default"
 	bindsym Right move workspace to output right, mode "default"
+	bindsym Up move workspace to output up, mode "default"
+	bindsym Down move workspace to output down, mode "default"
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"	
@@ -211,7 +213,7 @@ mode "$mode_spotify" {
 
 # Manual management of external displays
 set $mode_display Screens [1] DVI-I-1-1 ON, [2] DVI-I-2-2 ON, [3] DVI-I-1-1 OFF, [4] DVI-I-2-2 OFF
-bindsym $mod+XF86Display mode "$mode_display" 
+bindsym XF86Display mode "$mode_display" 
 mode "$mode_display" {
     bindsym 1 exec --no-startup-id xrandr --output DVI-I-1-1 --auto --above eDP1, mode "default"
     bindsym 2 exec --no-startup-id xrandr --output DVI-I-2-2 --auto --right-of DVI-I-1-1, mode "default"
@@ -268,6 +270,9 @@ bar {
 
 	# i3bar position
 	position top
+
+	# Tray Icons
+	tray_output primary
 
 	# Using custom i3status.conf
 	status_command $HOME/.config/i3/i3bar-conky.sh

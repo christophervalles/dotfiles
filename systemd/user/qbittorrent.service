@@ -1,0 +1,10 @@
+[Unit]
+Description=qBittorrent
+After=graphical.target network.target
+
+[Service]
+ExecStart=/usr/bin/qbittorrent
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=default.target

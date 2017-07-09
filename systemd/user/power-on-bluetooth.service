@@ -6,4 +6,4 @@ After=graphical.target
 ExecStart=/usr/local/bin/power-on-bluetooth
 
 [Install]
-WantedBy=initrc.target
+WantedBy=default.target

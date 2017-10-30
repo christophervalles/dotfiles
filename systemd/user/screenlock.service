@@ -7,7 +7,7 @@ User=chris
 Type=forking
 Environment=DISPLAY=:0
 ExecStartPre=
-ExecStart=/usr/local/bin/i3exit lock -c 000000 -e
+ExecStart=/usr/local/bin/i3exit lock
 
 [Install]
 WantedBy=sleep.target

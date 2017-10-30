@@ -93,9 +93,11 @@ export PATH=${HOME}/.npm-global/bin:${PATH}
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias encrypt="openssl des3 -in $1 -out $2"
-alias decrypt="openssl des3 -d -in $1 -out $2"
+alias encrypt="gpg -e -r chris"
+alias decrypt="gpg -d -o"
 alias ll="ls -lah"
+alias pbcopy="xclip -selection clipboard"
+alias pbpaste="xclip -selection clipboard -o"
 
 # SSH Agent config
 if [ -z "$SSH_AUTH_SOCK" ] ; then

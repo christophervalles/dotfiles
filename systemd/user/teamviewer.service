@@ -1,9 +1,9 @@
 [Unit]
-Description=PulseAudio system tray
+Description=TeamViewer client
 After=graphical.target
 
 [Service]
-ExecStart=/usr/bin/pasystray
+ExecStart=/opt/teamviewer/tv_bin/TeamViewer
 Restart=always
 RestartSec=5
 Environment=DISPLAY=:0

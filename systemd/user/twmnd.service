@@ -4,6 +4,8 @@ After=graphical.target
 
 [Service]
 ExecStart=/usr/bin/twmnd
+Restart=always
+RestartSec=5
 Environment=DISPLAY=:0
 
 [Install]

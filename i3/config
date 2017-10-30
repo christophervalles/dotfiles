@@ -201,7 +201,7 @@ mode "$mode_launcher" {
 }
 
 set $mode_spotify Spotify [←] Previous, [→] Next, [↑] Play/Pause
-bindsym $mod+F5 mode "$mode_spotify"
+bindsym $mod+F12 mode "$mode_spotify"
 mode "$mode_spotify" {
     bindsym Left exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
     bindsym Up exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause 
@@ -226,9 +226,9 @@ mode "$mode_display" {
 }
 
 # Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id volume up #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id volume down #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id volume mute # mute sound
 
 # Screenshot controls
 bindsym Print exec --no-startup-id  deepin-screenshot
@@ -251,6 +251,10 @@ workspace $tag1 output DP-3-2
 workspace $tag2 output DP-3-2
 workspace $tag3 output eDP-1
 workspace $tag4 output eDP-1 
+
+# Special options
+exec "xinput set-button-map 12 1 0 3 4 5 6 7"
+exec "setxkbmap -option compose:ralt"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

@@ -137,6 +137,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+m mode "move"
 mode "move" {
+	bindsym Up move workspace to output up, mode "default"
+	bindsym Down move workspace to output down, mode "default"
 	bindsym Left move workspace to output left, mode "default"
 	bindsym Right move workspace to output right, mode "default"
 

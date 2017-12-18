@@ -3,9 +3,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/usr/share/oh-my-zsh
 
-# Path to your oh-my-zsh installation.
-  export ZSH=/home/chris/.oh-my-zsh
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -59,8 +56,10 @@ plugins=(cake git battery git-flow git-extras gpg-agent theme web-search encode6
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+source $ZSH/oh-my-zsh.sh
+
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
@@ -71,7 +70,7 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-export GOPATH=${HOME}/projects
+#export GOPATH=${HOME}/projects
 
 export CLICOLOR=1
 #export WORKON_HOME=${HOME}/.virtualenvs
@@ -84,7 +83,7 @@ export CLICOLOR=1
 #export PATH=${HOME}/.npm-global/bin:${PATH}
 export PATH=${HOME}/bin:${PATH}
 
-source /usr/bin/virtualenvwrapper.sh
+#source /usr/bin/virtualenvwrapper.sh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

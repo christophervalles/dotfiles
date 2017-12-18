@@ -1,0 +1,32 @@
+#!/usr/bin/env zsh
+
+function set_volume {
+	for SINK in `pacmd list-sinks | grep 'index:' | cut -b12-`
+	do
+  		pactl set-sink-volume $SINK $VOLUME
+	done
+}
+
+function mute {
+	for SINK in `pacmd list-sinks | grep 'index:' | cut -b12-`
+	do
+		pactl set-sink-mute $SINK toggle
+	done
+}
+
+case "$1" in
+	up)
+		VOLUME="+5%"
+		set_volume
+		;;
+	down)
+		VOLUME="-5%"
+		set_volume
+		;;
+	mute)
+		mute
+		;;
+	*)
+		echo $"Usage: $0 {up|down|mute}"
+		exit 1
+esac

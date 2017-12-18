@@ -1,8 +1,8 @@
 ! Mouse cursor theme (for everyone)
-Xcursor.theme: elementary
+#Xcursor.theme: elementary
 
 ! HiDPI settings
-Xft.dpi: 150
+Xft.dpi: 100
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull

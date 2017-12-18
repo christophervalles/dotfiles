@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Path to your oh-my-zsh installation.
+export ZSH=/usr/share/oh-my-zsh
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/chris/.oh-my-zsh
@@ -51,9 +53,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
+plugins=(cake git battery git-flow git-extras gpg-agent theme web-search encode64)
 
 # User configuration
 
@@ -73,12 +73,16 @@ export EDITOR='vim'
 
 export GOPATH=${HOME}/projects
 
-export WORKON_HOME=${HOME}/.virtualenvs
-export PROJECT_HOME=${HOME}/projects
-export ANDROID_HOME=${HOME}/Android/Sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-export PATH=${PATH}:${GOPATH}/bin
+export CLICOLOR=1
+#export WORKON_HOME=${HOME}/.virtualenvs
+#export PROJECT_HOME=${HOME}/Projects
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+#export JAVA_HOME=/usr/lib/jvm/default-runtime
+#export ANDROID_HOME=${HOME}/Android/Sdk
+#export PATH=${PATH}:${ANDROID_HOME}/tools
+#export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+#export PATH=${HOME}/.npm-global/bin:${PATH}
+export PATH=${HOME}/bin:${PATH}
 
 source /usr/bin/virtualenvwrapper.sh
 
@@ -90,8 +94,14 @@ source /usr/bin/virtualenvwrapper.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias git=hub
+alias encrypt="gpg -e -r chris"
+alias decrypt="gpg -d -o"
+alias ll="ls -lah"
+alias pbcopy="xclip -selection clipboard"
+alias pbpaste="xclip -selection clipboard -o"
+alias syncdw="rsync -acvh --delete --exclude .git dev109:~/co/manage/ ~/projects/manage/"
+alias syncup="rsync -acvh --delete --exclude .git --exclude .idea ~/projects/manage/ dev109:~/co/manage/"
+alias ssh="set-prod-colors && ssh"
 
 # SSH Agent config
 if [ -z "$SSH_AUTH_SOCK" ] ; then
@@ -102,3 +112,4 @@ unsetopt inc_append_history
 unsetopt share_history
 setopt histignoredups
 setopt histignorespace
+#source /usr/share/nvm/init-nvm.sh

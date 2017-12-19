@@ -82,8 +82,13 @@ export CLICOLOR=1
 #export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 #export PATH=${HOME}/.npm-global/bin:${PATH}
 export PATH=${HOME}/bin:${PATH}
+export PATH=${HOME}/.gem/ruby/2.4.0/bin:${PATH}
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 
 #source /usr/bin/virtualenvwrapper.sh
+
+# Ruby env
+eval "$(rbenv init -)"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -106,6 +111,8 @@ alias ssh="set-prod-colors && ssh"
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`
 fi
+
+zstyle ':completion:*' menu select
 
 unsetopt inc_append_history
 unsetopt share_history

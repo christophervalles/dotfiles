@@ -136,6 +136,8 @@ bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# move workspace
 bindsym $mod+m mode "move"
 mode "move" {
 	bindsym Left move workspace to output left, mode "default"
@@ -156,16 +158,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 1 px or 1 ppt
-        bindsym k resize grow height 1 px or 1 ppt
-        bindsym l resize shrink height 1 px or 1 ppt
-        bindsym semicolon resize grow width 1 px or 1 ppt
-
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 1 px or 1 ppt
         bindsym Down resize grow height 1 px or 1 ppt
         bindsym Up resize shrink height 1 px or 1 ppt
         bindsym Right resize grow width 1 px or 1 ppt
+
+	bindsym Ctrl+Left resize shrink width 10 px or 10 ppt
+        bindsym Ctrl+Down resize grow height 10 px or 10 ppt
+        bindsym Ctrl+Up resize shrink height 10 px or 10 ppt
+        bindsym Ctrl+Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -256,8 +258,14 @@ workspace $tag4 output eDP-1
 exec "xinput set-button-map 12 1 0 3 4 5 6 7"
 exec "setxkbmap -option compose:ralt"
 
+# Autostart
+exec dex -ae i3
+
 # Force unity progress windows to be floating
 for_window [class="Unity" title="Hold on"] floating enable
+for_window [class="Unity" title="Importing Package"] floating enable
+for_window [class="Unity" title="Hold On"] floating enable
+for_window [class="Unity" title="Processing Package"] floating enable
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

@@ -1,7 +1,7 @@
 [global_config]
   hide_from_taskbar = True
   inactive_color_offset = 0.7
-  title_font = Anonymous Pro 10
+  title_font = MesloLGS Nerd Font 10
   title_hide_sizetext = True
   title_use_system_font = False
 [keybindings]

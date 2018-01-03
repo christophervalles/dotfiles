@@ -2,12 +2,10 @@
     editor = /usr/bin/vim
     excludesfile = ~/.gitignore_global
 [user]
-	name = Christopher Valles
-	email = hello@christophervalles.com
-	signingkey = B5CCEC7C
-[credential]
-	helper = osxkeychain
+	name = Chris Valles
+	email = tbhot3ww@meraki.com
 [alias]
+    gerrit-push = push --no-thin origin HEAD:refs/for/master
     amend = commit --amend
     fixup = commit --amend --no-edit
     st = status -sb

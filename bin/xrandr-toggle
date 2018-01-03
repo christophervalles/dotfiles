@@ -1,6 +1,6 @@
 #!/bin/bash
 intern=eDP1
-extern=DP2-2
+extern=DP2-1
 
 if xrandr | grep "$extern connected (normal"; then
     xrandr --output "$extern" --auto --above "$intern"

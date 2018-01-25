@@ -50,7 +50,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(cake git battery git-flow git-extras gpg-agent theme web-search encode64)
+plugins=(cake git battery git-flow git-extras gpg-agent theme web-search encode64 arch capistrano dotenv emoji gem jsontools man nmap postgres rbenv redis-cli ruby svn systemd vundle zsh_reload)
 
 # User configuration
 

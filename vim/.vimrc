@@ -37,6 +37,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'qpkorr/vim-bufkill'
 Plugin 'zoubin/vim-gotofile'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'SQLUtilities'
@@ -53,6 +54,12 @@ set background=dark                             " Changing background color
 colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1                             " Enable molokai colors in terminal
+
+augroup fixColors
+  au!
+  autocmd ColorScheme *  hi! Search ctermfg=15 ctermbg=202
+augroup END
+
 " }}}
 
 " === General Configuration === {{{

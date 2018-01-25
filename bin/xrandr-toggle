@@ -8,4 +8,6 @@ else
     xrandr --output "$extern" --off
 fi
 
+xset dpms 300 600 900
+
 exit 0

@@ -57,6 +57,7 @@ plugins=(cake git battery git-flow git-extras gpg-agent theme web-search encode6
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source /etc/profile
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -106,11 +107,6 @@ alias pbpaste="xclip -selection clipboard -o"
 alias syncdw="rsync -acvh --delete --exclude .git dev109:~/co/manage/ ~/projects/manage/"
 alias syncup="rsync -acvh --delete --exclude .git --exclude .idea ~/projects/manage/ dev109:~/co/manage/"
 alias ssh="set-prod-colors && ssh"
-
-# SSH Agent config
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-  eval `ssh-agent -s`
-fi
 
 zstyle ':completion:*' menu select
 

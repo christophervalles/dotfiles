@@ -191,23 +191,11 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-# launcher mode
-set $mode_launcher Launch [c]hrome, [s]potify, [i]dea
-bindsym $mod+o mode "$mode_launcher"
-mode "$mode_launcher" {
-    bindsym c exec google-chrome-stable, mode "default"
-    bindsym s exec spotify, mode "default"
-    bindsym i exec idea, mode "default"
-
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
-
 set $mode_spotify Spotify [←] Previous, [→] Next, [↑] Play/Pause
-bindsym $mod+F5 mode "$mode_spotify"
+bindsym $mod+F12 mode "$mode_spotify"
 mode "$mode_spotify" {
     bindsym Left exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-    bindsym Up exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+    bindsym Space exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
     bindsym Right exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 
     bindsym Return mode "default"

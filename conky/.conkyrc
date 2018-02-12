@@ -102,7 +102,8 @@ TEXT
 		"color": "\#ffffff"
 	},
 	{
-		"full_text": "${tztime UTC %s}",
+		#"full_text": "${tztime UTC %s}",
+		"full_text": "${tztime America/Louisville %H:%M:%S %Z}",
 		"color": "\#999999"
 	},
 	{

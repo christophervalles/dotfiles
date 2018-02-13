@@ -44,9 +44,9 @@ TEXT
 	},
 	${else}
 	{
-                "full_text": "E: Down",
-                "color": "\#ff0000"
-        },
+    "full_text": "E: Down",
+    "color": "\#ff0000"
+  },
 	${endif}
 	${if_up wlp4s0}
 	{
@@ -67,7 +67,7 @@ TEXT
 		"full_text" : "${fs_free /}",
 		"color" : "\#ffffff"
 	},
-  	{
+  {
 		"full_text" : "${mem}/${memmax}" ,
 		"color" :
 			${if_match ${memperc}<90}
@@ -75,27 +75,6 @@ TEXT
 			${else}
 				"\#ff0000"
 			${endif}
-	},
-	{
-		"full_text": "${battery_short} ${battery_time}",
-		"color":
-			${if_match ${battery_percent}<15}
-				"\#ff0000"
-			${else}
-				"\#ffffff"
-			${endif}
-	},
-	{
-		"full_text": "♪: ${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6 | sed 's/.//;s/.$//'}",
-		"color": "\#999999"
-	},
-	{
-		"full_text": "☀: ${exec $HOME/.config/i3/brightness-level.sh}%",
-		"color": "\#ffffff"
-	},
-	{
-		"full_text": "${loadavg 1}",
-		"color": "\#999999"
 	},
 	{
 		"full_text": "${tztime America/Los_Angeles %H:%M:%S %Z}",

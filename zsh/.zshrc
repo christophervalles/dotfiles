@@ -84,7 +84,7 @@ export CLICOLOR=1
 #export PATH=${HOME}/.npm-global/bin:${PATH}
 export PATH=${HOME}/bin:${PATH}
 export PATH=${HOME}/.gem/ruby/2.4.0/bin:${PATH}
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export GEM_HOME=$(${HOME}/.rbenv/shims/ruby -e 'print Gem.user_dir')
 
 #source /usr/bin/virtualenvwrapper.sh
 

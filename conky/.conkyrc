@@ -48,9 +48,9 @@ TEXT
     "color": "\#ff0000"
   },
 	${endif}
-	${if_up wlp4s0}
+	${if_up wlp3s0}
 	{
-		"full_text" : "W: (${wireless_link_qual wlp4s0}% at ${wireless_essid wlp4s0}) ${addr wlp4s0}",
+		"full_text" : "W: (${wireless_link_qual wlp3s0}% at ${wireless_essid wlp3s0}) ${addr wlp3s0}",
 		"color" : "\#00FF00"
 	},
 	${else}

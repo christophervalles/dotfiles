@@ -227,7 +227,7 @@ mode "$mode_pomodoro" {
 #exec --no-startup-id xdotool behave_screen_edge --delay 1000 bottom-right exec i3exit lock
 
 # Setup xautlock
-exec xautolock -detectsleep -time 5 -locker "i3exit lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
+exec xautolock -corners 0-00 -detectsleep -time 5 -locker "i3exit lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
 
 # Back and forth behavior
 workspace_auto_back_and_forth yes

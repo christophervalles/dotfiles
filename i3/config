@@ -192,7 +192,7 @@ mode "$mode_spotify" {
 }
 
 # Manual management of external displays
-bindsym XF86Display exec --no-startup-id /usr/local/bin/xrandr-toggle
+bindsym XF86Display exec --no-startup-id ~/bin/xrandr-toggle
 
 # Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/bin/volume up #increase sound volume

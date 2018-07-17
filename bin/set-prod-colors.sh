@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 xtermcontrol --fg "rgb:aaaa/aaaa/aaaa"
-xtermcontrol --bg "rgb:4c4c/0000/0000"
+xtermcontrol --bg "rgb:3f3f/0000/0000"
 xtermcontrol --color0 "rgb:fbfb/f1f1/c7c7"
 xtermcontrol --color1 "rgb:cccc/2424/1d1d"
 xtermcontrol --color2 "rgb:9898/9797/1a1a"

@@ -50,7 +50,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(cake git battery git-flow git-extras gpg-agent theme web-search encode64 arch capistrano dotenv emoji gem jsontools man nmap postgres rbenv redis-cli ruby svn systemd vundle zsh_reload)
+plugins=(vi-mode cake git battery git-flow git-extras gpg-agent theme web-search encode64 arch capistrano dotenv emoji gem jsontools man nmap postgres rbenv redis-cli ruby svn systemd vundle zsh_reload)
 
 # User configuration
 
@@ -85,7 +85,7 @@ export CLICOLOR=1
 export PATH=${HOME}/bin:${PATH}
 export PATH=${HOME}/.gem/ruby/2.4.0/bin:${PATH}
 export GEM_HOME=$(${HOME}/.rbenv/shims/ruby -e 'print Gem.user_dir')
-
+export SSH_ASKPASS=${HOME}/bin/ssh-askpass
 #source /usr/bin/virtualenvwrapper.sh
 
 # Ruby env
@@ -109,6 +109,13 @@ alias syncup="rsync -acvh --delete --exclude .git --exclude .idea ~/projects/man
 alias ssh="set-prod-colors && ssh"
 
 zstyle ':completion:*' menu select
+
+#EMACS mode
+bindkey -e
+
+#FZF integration
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 unsetopt inc_append_history
 unsetopt share_history

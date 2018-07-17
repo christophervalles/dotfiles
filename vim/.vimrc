@@ -42,6 +42,8 @@ Plugin 'zoubin/vim-gotofile'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'SQLUtilities'
 Plugin 'Align'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()

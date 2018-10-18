@@ -131,10 +131,10 @@ mode "move" {
 bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-        bindsym j resize shrink width 1 px or 1 ppt
-        bindsym k resize grow height 1 px or 1 ppt
-        bindsym l resize shrink height 1 px or 1 ppt
-        bindsym semicolon resize grow width 1 px or 1 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -210,7 +210,7 @@ mode "$mode_pomodoro" {
 #exec --no-startup-id xdotool behave_screen_edge --delay 1000 bottom-right exec i3exit lock
 
 # Setup xautlock
-exec xautolock -corners 0-00 -detectsleep -time 5 -locker "i3exit lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
+exec xautolock -corners 0-00 -cornersize 25 -detectsleep -time 5 -locker "i3exit lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
 
 # Back and forth behavior
 workspace_auto_back_and_forth yes

@@ -1,6 +1,7 @@
 #!/bin/bash
-intern=eDP1
-extern=DP3-2
+intern=eDP-1
+extern=DP-3-2
+#extern=HDMI-1
 
 if xrandr | grep "$extern connected (normal"; then
     xrandr --output "$extern" --mode "3440x1440" --primary

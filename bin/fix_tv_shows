@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+pushd
+cd ~/Videos/TV\ Shows
+find . -name '*.mkv' -o -name '*.avi' -o -name '*.mp4' | sort | uniq | xargs -L1 -I '{}' mv {} .
+find . ! -path . -type d | xargs -L1 -I {} rm -rf "{}"
+popd

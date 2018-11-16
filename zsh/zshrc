@@ -82,10 +82,13 @@ export ANDROID_HOME=${HOME}/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH=${HOME}/.npm-global/bin:${PATH}
+export SSH_ASKPASS=ssh-askpass
 
-#source /usr/local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
@@ -98,6 +101,11 @@ alias decrypt="gpg -d -o"
 alias ll="ls -lah"
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
+<<<<<<< Updated upstream:zsh/zshrc
+=======
+alias syncdw="rsync -acvh --delete --exclude .git dev109:~/co/manage/ ~/projects/manage/"
+alias syncup="rsync -acvh --delete --exclude .git --exclude .idea ~/projects/manage/ dev109:~/co/manage/"
+>>>>>>> Stashed changes:zsh/.zshrc
 
 # SSH Agent config
 if [ -z "$SSH_AUTH_SOCK" ] ; then

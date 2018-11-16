@@ -146,7 +146,7 @@ mode "move" {
 	bindsym Down move workspace to output down, mode "default"
 
 	bindsym Return mode "default"
-	bindsym Escape mode "default"	
+	bindsym Escape mode "default"
 }
 
 # resize window (you can also use the mouse for that)
@@ -206,26 +206,21 @@ set $mode_spotify Spotify [←] Previous, [→] Next, [↑] Play/Pause
 bindsym $mod+F12 mode "$mode_spotify"
 mode "$mode_spotify" {
     bindsym Left exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-    bindsym Up exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause 
+    bindsym Up exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
     bindsym Right exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 
     bindsym Return mode "default"
-    bindsym Escape mode "default"    
-}
-
-# Manual management of external displays
-set $mode_display Screens [1] DVI-I-1-1 ON, [2] DVI-I-2-2 ON, [3] DVI-I-1-1 OFF, [4] DVI-I-2-2 OFF
-bindsym XF86Display mode "$mode_display" 
-mode "$mode_display" {
-    bindsym 1 exec --no-startup-id xrandr --output DVI-I-1-1 --auto --above eDP-1, mode "default"
-    bindsym 2 exec --no-startup-id xrandr --output DVI-I-2-2 --auto --right-of DVI-I-1-1, mode "default"
-    bindsym 3 exec --no-startup-id xrandr --output DVI-I-1-1 --auto --off, mode "default"
-    bindsym 4 exec --no-startup-id xrandr --output DVI-I-2-2 --auto --off, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
+# Spotify management if the keyboard supports it
+bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+# Manual management of external displays
+bindsym XF86Display exec --no-startup-id ~/bin/xrandr-toggle
+bindsym $mod+F1 exec --no-startup-id ~/bin/xrandr-toggle
 
 # Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id volume up #increase sound volume
@@ -240,7 +235,7 @@ bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 # Hot corners config
-#exec --no-startup-id xdotool behave_screen_edge --delay 1000 bottom-right exec i3exit lock 
+#exec --no-startup-id xdotool behave_screen_edge --delay 1000 bottom-right exec i3exit lock
 
 # Setup xautlock
 exec xautolock -detectsleep -time 5 -locker "i3exit lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
@@ -252,7 +247,7 @@ workspace_auto_back_and_forth yes
 workspace $tag1 output DP-3-2
 workspace $tag2 output DP-3-2
 workspace $tag3 output eDP-1
-workspace $tag4 output eDP-1 
+workspace $tag4 output eDP-1
 
 # Special options
 exec "xinput set-button-map 12 1 0 3 4 5 6 7"
@@ -280,7 +275,7 @@ bar {
 		focused_workspace  #008fff #007fff #ffffff
 		active_workspace   #333333 #5f676a #ffffff
 		inactive_workspace #333333 #222222 #888888
-		urgent_workspace   #aa0000 #990000 #ffffff	
+		urgent_workspace   #aa0000 #990000 #ffffff
 	}
 
 	# i3bar position

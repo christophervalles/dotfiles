@@ -1,0 +1,13 @@
+#!/bin/bash
+intern=eDP-1
+extern=HDMI-1
+
+if xrandr | grep "$extern connected (normal"; then
+    xrandr --output "$extern" --auto --primary
+    xrandr --output "$intern" --off
+else
+    xrandr --output "$extern" --off
+    xrandr --output "$intern" --auto --primary
+fi
+
+exit 0

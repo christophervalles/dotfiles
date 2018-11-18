@@ -1,10 +1,9 @@
 [Unit]
 Description=Blueberry Tray
+After=power-on-bluetooth.service
 
 [Service]
 ExecStart=/usr/bin/blueberry-tray
-Restart=always
-RestartSec=5
 Environment=DISPLAY=:0
 
 [Install]

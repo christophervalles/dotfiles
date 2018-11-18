@@ -37,8 +37,13 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'qpkorr/vim-bufkill'
 Plugin 'zoubin/vim-gotofile'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'SQLUtilities'
+Plugin 'Align'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -51,6 +56,12 @@ set background=dark                             " Changing background color
 colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1                             " Enable molokai colors in terminal
+
+augroup fixColors
+  au!
+  autocmd ColorScheme *  hi! Search ctermfg=15 ctermbg=202
+augroup END
+
 " }}}
 
 " === General Configuration === {{{
@@ -91,7 +102,7 @@ set formatoptions=tcrqn                         " How automatic formatting is to
 set whichwrap=b,s,<,>,[,]                       " Allow specific keys that moves the cursor
 set tabstop=2 shiftwidth=2 expandtab            " Set tabs to 4 spaces
 set invlist                                     " Show hidden chars
-set clipboard=unnamed                           " Copy to the system clipboard
+set clipboard=unnamedplus                       " Copy to the system clipboard
 
 " Remove window scrollbars in gvim and macvim
 set guioptions-=T

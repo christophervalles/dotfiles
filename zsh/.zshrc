@@ -1,0 +1,129 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Path to your oh-my-zsh installation.
+export ZSH=/usr/share/oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(vi-mode cake git battery git-flow git-extras gpg-agent theme web-search encode64 arch capistrano dotenv emoji gem jsontools man nmap postgres rbenv redis-cli ruby svn systemd vundle zsh_reload)
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
+source /etc/profile
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+export EDITOR='vim'
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+#export GOPATH=${HOME}/projects
+
+export CLICOLOR=1
+#export WORKON_HOME=${HOME}/.virtualenvs
+#export PROJECT_HOME=${HOME}/Projects
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+#export JAVA_HOME=/usr/lib/jvm/default-runtime
+#export ANDROID_HOME=${HOME}/Android/Sdk
+#export PATH=${PATH}:${ANDROID_HOME}/tools
+#export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+#export PATH=${HOME}/.npm-global/bin:${PATH}
+export PATH=${HOME}/bin:${PATH}
+export PATH=${HOME}/.gem/ruby/2.4.0/bin:${PATH}
+export GEM_HOME=$(${HOME}/.rbenv/shims/ruby -e 'print Gem.user_dir')
+export SSH_ASKPASS=${HOME}/bin/ssh-askpass
+#source /usr/bin/virtualenvwrapper.sh
+
+# Ruby env
+eval "$(rbenv init -)"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias encrypt="gpg -e -r chris"
+alias decrypt="gpg -d -o"
+alias ll="ls -lah"
+alias pbcopy="xclip -selection clipboard"
+alias pbpaste="xclip -selection clipboard -o"
+alias syncdw="rsync -acvh --delete --exclude .git dev109:~/co/manage/ ~/projects/manage/"
+alias syncup="rsync -acvh --delete --exclude .git --exclude .idea ~/projects/manage/ dev109:~/co/manage/"
+alias ssh="set-prod-colors && ssh"
+
+zstyle ':completion:*' menu select
+
+#EMACS mode
+bindkey -e
+
+#FZF integration
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+
+unsetopt inc_append_history
+unsetopt share_history
+setopt histignoredups
+setopt histignorespace
+#source /usr/share/nvm/init-nvm.sh

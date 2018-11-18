@@ -1,9 +1,14 @@
 [Unit]
-Description=Bluetooth power on
-After=graphical.target
+Description=Power on bluetooth
+Wants=bluetooth.target
+After=bluetooth.target
 
 [Service]
+Type=oneshot
 ExecStart=/usr/local/bin/power-on-bluetooth
+#ExecStartPost=/usr/bin/touch /var/run/power-on-bluetooth
+#ConditionFileExists=/var/run/power-on-bluetooth
+RemainAfterExit=true
 
 [Install]
 WantedBy=default.target

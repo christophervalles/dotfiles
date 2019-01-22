@@ -44,6 +44,8 @@ Plugin 'SQLUtilities'
 Plugin 'Align'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'nopik/vim-nerdtree-direnter'
+Plugin 'jremmen/vim-ripgrep'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -93,7 +95,7 @@ set encoding=utf-8                              " Necessary to show Unicode glyp
 set ttyfast                                     " Send more characters for redraws
 set ttymouse=sgr                                " Set terminal name that supports mouse codes(sgr, xterm, xterm2, netterm, dec, jsbterm, pterm).
 set mouse=a                                     " Enable mouse use in all modes
-set number                                      " Show line numbers by default
+set number relativenumber                       " Show line numbers by default
 set cursorline                                  " Highlight current line
 set listchars=tab:┊\                            " Indent line
 set showmode                                    " Always show command or insert mode
@@ -102,7 +104,7 @@ set formatoptions=tcrqn                         " How automatic formatting is to
 set whichwrap=b,s,<,>,[,]                       " Allow specific keys that moves the cursor
 set tabstop=2 shiftwidth=2 expandtab            " Set tabs to 4 spaces
 set invlist                                     " Show hidden chars
-set clipboard=unnamedplus                       " Copy to the system clipboard
+set clipboard=unnamed                           " Copy to the system clipboard
 
 " Remove window scrollbars in gvim and macvim
 set guioptions-=T
@@ -134,6 +136,7 @@ set wildignore=*.swp,*.bak,*.swo,*.pyc,*.class,*DS_Store*
 au VimEnter * nnoremap <silent> <F8> :TlistToggle<cr>
 map <C-l> <ESC>:bn<CR>
 map <C-h> <ESC>:bp<CR>
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " Tab navigation
 nnoremap <C-t> :tabnew<CR>
@@ -165,8 +168,12 @@ let NERDTreeWinPos="right"                      " Right position
 let g:NERDTreeDirArrowExpandable = '▶'
 let g:NERDTreeDirArrowCollapsible = '▼'
 let NERDTreeShowHidden=1
+let NERDChristmasTree = 1
+let NERDTreeHighlightCursorline = 1
 let NERDTreeMapActivateNode='<right>'
+
 autocmd FileType nerdtree nmap <buffer> <left> u
+autocmd BufWinEnter * NERDTreeMirror
 
 " Open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
@@ -219,7 +226,6 @@ let g:ctrlp_working_path_mode = 'a'             " Only the current directory and
 let g:ctrlp_custom_ignore = '\v[\/](.git|node_modules|bower|build)'
 let g:ctrlp_show_hidden = 1                     " Search hidden files
 " }}}
-
 
 " === PLUGIN: JSON === {{{
 let g:indentLine_noConcealCursor = 1

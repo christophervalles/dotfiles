@@ -1,14 +1,27 @@
 #!/bin/bash
-intern=eDP-1
-extern=DP-3-2
-#extern=HDMI-1
+intern=$(xrandr | grep eDP | awk '{print $1}')
+extern=$(xrandr | grep -e " connected" | awk '{print $1}' | grep -v "$intern")
 
-if xrandr | grep "$extern connected (normal"; then
-    xrandr --output "$extern" --mode "3440x1440" --primary
+if xrandr | grep "$intern connected primary"; then
+    cmd=''
+    for m in $extern; do
+      if [ -z "$cmd" ]; then
+        cmd="xrandr --output $m --auto --primary"
+      else
+        cmd="$cmd --output $m --auto --left-of $previous"
+      fi
+
+      previous=$m
+      #xrandr --output "$m" --auto --mode 3440x1440 --primary
+    done
+
+    eval $cmd
     xrandr --output "$intern" --off
 else
+    for m in $extern; do
+      xrandr --output "$m" --off
+    done
     xrandr --output "$intern" --auto --primary
-    xrandr --output "$extern" --off
 fi
 
 exit 0

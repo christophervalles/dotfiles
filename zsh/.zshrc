@@ -83,7 +83,7 @@ export CLICOLOR=1
 #export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 #export PATH=${HOME}/.npm-global/bin:${PATH}
 export PATH=${HOME}/bin:${PATH}
-export PATH=${HOME}/.gem/ruby/2.4.0/bin:${PATH}
+export PATH=$(${HOME}/.rbenv/shims/ruby -e 'print Gem.user_dir')/bin:${PATH}
 export GEM_HOME=$(${HOME}/.rbenv/shims/ruby -e 'print Gem.user_dir')
 export SSH_ASKPASS=${HOME}/bin/ssh-askpass
 #source /usr/bin/virtualenvwrapper.sh

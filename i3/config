@@ -210,17 +210,17 @@ mode "$mode_pomodoro" {
 #exec --no-startup-id xdotool behave_screen_edge --delay 1000 bottom-right exec i3exit lock
 
 # Setup xautlock
-exec xautolock -corners 0-00 -cornersize 25 -detectsleep -time 5 -locker "i3exit lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
+exec_always xautolock -corners 0-00 -cornersize 25 -detectsleep -time 5 -locker "i3exit lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
 
 # Back and forth behavior
 workspace_auto_back_and_forth yes
 
 # Special options
-exec --no-startup-id "xinput set-button-map 12 1 0 3 4 5 6 7"
-exec --no-startup-id "setxkbmap -option compose:ralt"
+exec_always --no-startup-id "xinput set-button-map 12 1 0 3 4 5 6 7"
+exec_always --no-startup-id "setxkbmap -option compose:ralt"
 
 # Autostart
-exec dex -ae i3
+exec_always dex -ae i3
 
 # Force unity progress windows to be floating
 for_window [class="Unity" title="Hold on"] floating enable

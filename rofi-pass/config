@@ -54,7 +54,7 @@ BROWSER='xdg-open'
 
 ## Misc settings
 
-default_do='copyMenu' # menu, autotype, copyPass, typeUser, typePass, copyUser, copyUrl, viewEntry, typeMenu, actionMenu, copyMenu, openUrl
+default_do='copyPass' # menu, autotype, copyPass, typeUser, typePass, copyUser, copyUrl, viewEntry, typeMenu, actionMenu, copyMenu, openUrl
 auto_enter='false'
 notify='false'
 default_autotype='user :tab pass'
@@ -65,7 +65,7 @@ help_color="#4872FF"
 
 # Clipboard settings
 # Possible options: primary, clipboard, both
-clip=primary
+clip=both
 
 # Seconds before clearing pass from clipboard
 clip_clear=45

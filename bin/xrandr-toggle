@@ -2,6 +2,8 @@
 intern=$(xrandr | grep eDP | awk '{print $1}')
 extern=$(xrandr | grep -e " connected" | awk '{print $1}' | grep -v "$intern")
 
+echo "Utility called" | systemd-cat -t xrandr-toggle -p debug
+
 if xrandr | grep "$intern connected primary"; then
     cmd=''
     for m in $extern; do
@@ -12,15 +14,25 @@ if xrandr | grep "$intern connected primary"; then
       fi
 
       previous=$m
-      #xrandr --output "$m" --auto --mode 3440x1440 --primary
     done
 
+    if [ -z "$cmd"]; then
+      echo "No external screens connected" | systemd-cat -t xrandr-toggle -p warning
+      exit 1
+    fi
+
+    echo "Running command: $cmd" | systemd-cat -t xrandr-toggle -p info
     eval $cmd
+
+    echo "Disabling $intern" | systemd-cat -t xrandr-toggle -p info
     xrandr --output "$intern" --off
 else
     for m in $extern; do
+      echo "Disabling $m" | systemd-cat -t xrandr-toggle -p info
       xrandr --output "$m" --off
     done
+
+    echo "Enabling $intern" | systemd-cat -t xrand-toggle -p info
     xrandr --output "$intern" --auto --primary
 fi
 

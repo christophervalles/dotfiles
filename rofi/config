@@ -1,0 +1,7 @@
+rofi.combi-modi:    window,drun,ssh
+rofi.theme:         solarized
+rofi.font:          MesloLGS Nerd Font RegularForPowerline 10
+rofi.modi:          combi
+rofi.theme:         tbhot3ww
+rofi.terminal:      terminator
+rofi.ssh-command:   {terminal} -x {ssh-client} {host}

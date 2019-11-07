@@ -77,12 +77,11 @@ TEXT
 			${endif}
 	},
 	{
-		"full_text": "${tztime America/Los_Angeles %H:%M:%S %Z}",
+		"full_text": "${tztime Europe/London %H:%M:%S %Z}",
 		"color": "\#ffffff"
 	},
 	{
-		#"full_text": "${tztime UTC %s}",
-		"full_text": "${tztime America/Louisville %H:%M:%S %Z}",
+		"full_text": "${tztime Australia/Sydney %H:%M:%S %Z}",
 		"color": "\#999999"
 	},
 	{

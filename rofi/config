@@ -1,6 +1,6 @@
 rofi.combi-modi:    window,drun,ssh
 rofi.theme:         solarized
-rofi.font:          MesloLGS Nerd Font RegularForPowerline 10
+rofi.font:          MesloLGS Nerd Font RegularForPowerline 12
 rofi.modi:          combi
 rofi.theme:         tbhot3ww
 rofi.terminal:      terminator

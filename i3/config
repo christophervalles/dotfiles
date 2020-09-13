@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Anonymous Pro 8
+font pango:Anonymous Pro 11
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -218,9 +218,10 @@ workspace_auto_back_and_forth yes
 # Special options
 exec_always --no-startup-id "xinput set-button-map 12 1 0 3 4 5 6 7"
 exec_always --no-startup-id "setxkbmap -option compose:ralt"
+exec_always --no-stratup-id "xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Natural Scrolling Enabled' 1"
 
 # Autostart
-exec_always dex -ae i3
+exec --no-startup-id dex -ae i3
 
 # Force unity progress windows to be floating
 for_window [class="Unity" title="Hold on"] floating enable

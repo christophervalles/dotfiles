@@ -43,7 +43,9 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'nopik/vim-nerdtree-direnter'
 Plugin 'jremmen/vim-ripgrep'
-Plugin 'neoclide/coc.nvim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'neoclide/coc-highlight'
+Plugin 'neoclide/coc-python'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
